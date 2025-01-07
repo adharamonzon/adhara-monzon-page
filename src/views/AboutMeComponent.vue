@@ -13,10 +13,9 @@
             <p class="aboutMe-text">¡Hola! Soy Adhara y en 2020 decidí darle un cambio a mi vida profesional y comencé a estudiar programación, buscando nuevos retos y un nuevo camino profesional.</p>
             <p class="aboutMe-text">De mi anterior etapa como terapeuta ocupacional me llevo el <strong>trabajo en equipos multidisciplinares</strong>, la <strong>capacidad de adaptación</strong> a nuevos retos y la <strong>creatividad</strong> para alcanzar los objetivos siempre desde la <strong>resolución de problemas.</strong></p>
             <p class="aboutMe-text" style="margin-bottom: 15px">En esta nueva etapa como programadora he aprendido a hacer páginas web sencillas basadas en HTML y CSS con diseño responsive, pero también he aprendido a desarrollar aplicaciones web más complejas maquetándolas al pixel a través de diseños y utilizando Sass y la nomenclatura BEM, utilizando JavaScript y frameworks como React o Angular para dotarlas de funcionalidad. </p>
-            <CVComponet />
+            <CVComponent />
             <div class="btn-container">
               <router-link class="btn uppercase" to="/aboutMeDetail" :key="$route.fullpath">Más sobre mi</router-link>
-              <!-- <a class="btn uppercase" href="./aboutMe.html">Más sobre mi</a> -->
             </div>
           </div>
         </section>
@@ -24,12 +23,12 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
-import CVComponet from '../components/CVComponet.vue';
+import CVComponent from '../components/CVComponent.vue';
 import AboutMeDetail from './AboutMeDetail.vue';
 
 export default defineComponent({
   name: 'AboutMe',
-  components: { CVComponet, AboutMeDetail}
+  components: { CVComponent, AboutMeDetail}
 })
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="aboutMe-subtitle-section">
     <h4 class=" uppercase">Experiencia profesional</h4>
-    <div class="linea-subtitle"></div>
+    <div class="linea"></div>
   </div>
   <div class="experience-item">
     <div class="experience-list-item-timeline">
