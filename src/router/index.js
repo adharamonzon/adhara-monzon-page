@@ -13,6 +13,7 @@ const routes = [
   { 
     path: '/projects',
     name: 'Projects',
+    hash: '#project',
     component: () => import('../views/ProjectsComponent.vue')
   }
 ]
@@ -21,7 +22,11 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    return savedPosition || { top: 0}
+    if (to.hash) {
+      return { el: to.hash, top: 50}
+    } else {
+      return savedPosition || { top: 0}
+    }
     //return { top: null, left: null, behavior: null}
   },
   linkActiveClass: 'link-active-link'

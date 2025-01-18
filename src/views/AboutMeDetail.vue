@@ -1,12 +1,16 @@
 <template>
    <div class="header-container">
-      <a href="./index.html"><img class="homeIcon" src="../assets/icons/arrow.png" alt="atras" /></a>
-      <header class="header" id="header">
-        <div class="header-title-section">
-          <h1 class="header-title uppercase">Sobre mí</h1>
-          <div class="linea-header"></div>
-        </div>
-      </header>
+     <div class="header" id="header">
+        <router-link class="back" to="/">
+          <img class="homeIcon" src="../assets/icons/arrow.svg" alt="atras" />
+        </router-link >
+        <header id="headerDetail">
+          <div class="header-title-section">
+            <h1 class="header-title uppercase">Sobre mí</h1>
+            <div class="linea"></div>
+          </div>
+        </header>
+      </div>
     </div>
     <main class="main">
       <section class="main-aboutMe">
@@ -20,51 +24,17 @@
           <h4 class="main-title uppercase">Formación</h4>
           <div class="linea"></div>
           <ul class="education-list">
-            <li class="education-list-item">
+            <li class="education-list-item" v-for="item in educationList" :key="item.id">
               <div class="education-list-item-timeline">
                 <img src="../assets/icons/check.svg" />
               </div>
               <div>
-                <h5 class="education-list-item-title">Master Front-End Lemoncode</h5>
-                <small>Octubre 2022 - Actualidad</small>
-                <p class="education-list-item-text">React, Angular, Vuejs, Svelte, d3js, flexbox, CSS Grid, Material design, Css in JS</p>
-                <p class="education-list-item-text">Gatsby, Jest, GraphQL, lodash/fb, Webpack, Parcel, ES6/ES7, Typescript, git</p>
-                <p class="education-list-item-text">Seguridad: coockies, headers, JWT, prevención XSS y XSFR</p>
-                <p class="education-list-item-text">Calidad del código y pruebas unitarias: /TDD, Jest, React Testing Library, Jest + Typescript</p>
-                <small class="education-list-item-company bold">LemonCode<img class="education-list-item-icon" src="./css/icons/logo_2.png" alt="logo GeeksHubs Academy" /></small>
-              </div>
-            </li>
-            <li class="education-list-item">
-              <div class="education-list-item-timeline">
-                <img src="../assets/icons/check.svg" />
-              </div>
-              <div>
-                <h5 class="education-list-item-title">Bootcamp Front-End REACT</h5>
-                <small>Enero 2021 - Junio 2021</small>
-                <p class="education-list-item-text">Maquetación web (HTML5, CSS3, bootstrap, JS), React JS + REDUX, NODE + NPM, BABLE + WEBPACK, GIT y GitHub</p>
-                <small class="education-list-item-company bold">GeeksHubs Academy <img class="education-list-item-icon" src="./css/icons/logo-geekshubs.png" alt="logo GeeksHubs Academy" /></small>
-              </div>
-            </li>
-            <li class="education-list-item">
-              <div class="education-list-item-timeline">
-                <img class="education-list-item-timeline-check" src="../assets/icons/check.svg" />
-              </div>
-              <div>
-                <h5 class="education-list-item-title">Bootcamp Front-End</h5>
-                <small>Octubre 2020 - Febrero 2021</small>
-                <p class="education-list-item-text">Desarrolo web con HTML5, CSS3, JS)</p>
-                <small class="education-list-item-company bold">Samsung DesArrolladoras<img class="education-list-item-icon" src="./css/icons/samsung.png" alt="logo Samsung DesArrolladoras" /></small>
-              </div>
-            </li>
-            <li class="education-list-item">
-              <div class="education-list-item-timeline">
-                <img class="education-list-item-timeline-check" src="../assets/icons/check.svg" />
-              </div>
-              <div>
-                <h5 class="education-list-item-title">Bootcamp Front-End</h5>
-                <small>Enero 2020 - Abril 2020</small>
-                <p class="education-list-item-text">Maquetación web (HTML5, CSS3, bootstrap, JS), React JS, GIT + GitHub</p>
-                <small class="education-list-item-company bold">Adalab<img class="education-list-item-icon" src="./css/icons/logo-adalab.svg" alt="logo GeeksHubs Academy" /></small>
+                <h5 class="education-list-item-title">{{item.title}}</h5>
+                <small>{{item.dates}}</small>
+                <p class="education-list-item-text">{{item.description}}</p>
+                <small class="education-list-item-company bold">{{item.compnay}}
+                  <img class="education-list-item-icon" :src="getUrl(item.logoName)" :alt="item.logoName"/>
+                </small>
               </div>
             </li>
           </ul>
@@ -82,14 +52,31 @@
             <h4 class="main-title uppercase">Habilidades</h4>
             <div class="linea"></div>
             <ul class="skills-list">
-              <li class="skills-list-item"><i class="skills-list-item-icon fab fa-html5"></i></li>
-              <li class="skills-list-item"><i class="skills-list-item-icon fab fa-css3-alt"></i></li>
-              <li class="skills-list-item"><i class="skills-list-item-icon fab fa-sass"></i></li>
-              <li class="skills-list-item"><i class="skills-list-item-icon fab fa-js-square"></i></li>
-              <li class="skills-list-item"><i class="skills-list-item-icon fab fa-react"></i></li>
-              <li class="skills-list-item"><i class="skills-list-item-icon fab fa-angular"></i></li>
-              <li class="skills-list-item"><img src="./css/icons/typescript.svg" class="skills-list-item-icon icon" /></li>
-              <li class="skills-list-item"><i class="skills-list-item-icon fab fa-git"></i></li>
+              <li class="skills-list-item">
+                <i class="skills-list-item-icon fab fa-html5"></i>
+              </li>
+              <li class="skills-list-item">
+                <i class="skills-list-item-icon fab fa-css3-alt"></i></li>
+              <li class="skills-list-item">
+                <i class="skills-list-item-icon fab fa-sass"></i>
+              </li>
+              <li class="skills-list-item">
+                <i class="skills-list-item-icon fab fa-js-square"></i></li>
+              <li class="skills-list-item">
+                <i class="skills-list-item-icon fab fa-vuejs"></i>
+              </li>
+              <li class="skills-list-item">
+                <i class="skills-list-item-icon fab fa-angular"></i>
+              </li>
+              <li class="skills-list-item">
+                <i class="skills-list-item-icon fab fa-react"></i>
+              </li>
+              <li class="skills-list-item">
+                <img src="../assets/icons/logo-ts.svg" class="skills-list-item-icon icon" />
+              </li>
+              <li class="skills-list-item">
+                <i class="skills-list-item-icon fab fa-git"></i>
+              </li>
             </ul>
           </div>
         </article>
@@ -101,6 +88,7 @@
 import { defineComponent } from 'vue';
 import CVComponent from '../components/CVComponent.vue';
 import lenguajesData from '../data/lenguajes.json';
+import educationList from '../data/education.json';
 export default defineComponent({
   name: 'Landing',
   components: {
@@ -108,7 +96,14 @@ export default defineComponent({
   },
   data () {
     return {
-      lenguajes: lenguajesData
+      lenguajes: lenguajesData,
+      educationList: educationList
+    }
+  },
+  methods: {
+    getUrl(url: string) {
+      const imageUrl = new URL(`../assets/icons/${url}`, import.meta.url).href;
+      return imageUrl;
     }
   }
 })
@@ -118,10 +113,19 @@ export default defineComponent({
 .homeIcon {
   width: 30px;
   margin: 20px;
-  transform: rotate(33deg);
   cursor: pointer;
 }
-.header {
+.back {
+  color: #ffffff; 
+  position: absolute;
+  top: 20px;
+  left: 40px;
+}
+.header-container {
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(36,36,36,1) 64%, rgba(67,67,67,1) 91%);
+}
+#headerDetail {
   height: 50vh;
   background-image: url(../assets/images/aboutMeHeader.jpg);
   background-position: center;
@@ -130,10 +134,6 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.header-container {
-  background: rgb(0,0,0);
-  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(36,36,36,1) 64%, rgba(67,67,67,1) 91%);
 }
 .header-title-section {
   display: flex;
@@ -161,6 +161,7 @@ export default defineComponent({
   font-size: 1.37rem;
 }
 .main-aboutMe-text {
+  text-align: justify;
   font-size: 0.87rem;
   line-height: 1.62rem;
 }
@@ -243,7 +244,7 @@ export default defineComponent({
 .skills-list {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 100px);
+  grid-template-columns: repeat(5, 100px);
   grid-column-gap: 1.25rem 3.75rem;
   grid-row-gap: 1.25rem;
   align-self: center;
@@ -255,11 +256,19 @@ export default defineComponent({
   font-size: 4.06rem;
 } 
 
+.fab:hover {
+  color: black !important;
+}
+
 .linea {
   width: 4.35rem;
   height: 0.31rem;
   background-color: #9bd189;
   margin-top: 0.62rem;
   align-self: center;
+}
+.icon {
+  margin-top: -4px;
+  width: 45px;
 }
 </style>
