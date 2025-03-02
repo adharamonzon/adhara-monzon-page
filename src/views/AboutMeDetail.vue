@@ -15,11 +15,11 @@
     <main class="main">
       <section class="main-aboutMe">
         <h3 class="main-aboutMe-title">Hola, soy Adhara</h3>
-        <p class="main-aboutMe-text">Os voy a contar un poco más sobre mi. Me encanta viajar y descubrir nuevos lugares. Me gustan los <strong>idiomas</strong> y la de cosas que nos pueden aportar, nos sólo para comunicarnos, también para poder formar parte y entender otras culturas, por ello he estado viviendo en varíos países, el último fue en Alemania durante 3 años. También me gusta mucho la <strong>música</strong> y toco varios instrumentos y si hay música en directo siempre va a ser un buen plan.</p>
-        <p class="main-aboutMe-text">Profesionalmente en el 2020 decidí darle un cambio a mi vida y aposte por reinvertarme tecnológicamente, hice un bootcamp con Adalab, en el que descubrí la programación y asenté las bases para poder crear páginas sencillas. Desde entonces me he seguido formando con cursos y otros bootcamps, ampliando así mis conocimientos en la programación. Me gusta la maquetación y poder aportar un valor añadido al producto, pero sobre todo me gusta la programación. He trabajado con distintos frameworks como <strong>React o Angular</strong>, también he aprendido otros como <strong>Vuejs o Svelte</strong>, usando siempre Typescript.</p>
-        <p class="main-aboutMe-text">Laboralmente debido a la pandemia fue más difícil el inicio, pero no por ello tuve menos ganas, de esta manera pude prepararme más y seguir estudiando. Desde julio de 2021 trabajo para NTT DATA, he tenido la oportunidad de trabajar con distintos equipos y clientes, siempre de manera <strong>Agile</strong>. Durante estos año he tenido la oportunidad no sólo de seguir formandome sino de seguir aprendiendo de compañeros senior y desempeñar funciones como realizar desarrollos de componentes reutilizables de código, refactorizar funciones y componenetes, hacer pruebas de calidad de test con <strong>Karma con jasmine</strong>, tipar las aplicaciones con <strong>Typescript</strong>, etc.</p>
-      </section>
-      <section class="main-section">
+        <p class="main-aboutMe-text">Soy programadora con más de 4 años de experiencia en el mundo del desarrollo web. Inicié mi carrera en un área distinta, pero en 2020 decidí dar un giro profesional y formarme como programadora. A lo largo de estos años he trabajado con tecnologías como <strong>Angular</strong> y actualmente participo en un proyecto para la administración pública alemana usando <strong>Vue.js</strong>.</p>
+        <p class="main-aboutMe-text">Me considero una persona <strong>curiosa, creativa</strong> y me encanta el <strong>trabajo en equipo.</strong> Disfruto de los entornos multiculturales, ya que he tenido la oportunidad de vivir fuera de España, lo que me ha permitido enriquecer mi perspectiva y habilidades. Hablo <strong>inglés y alemán</strong> con fluidez y estoy aprendiendo lengua de signos, lo que refleja mi interés por los idiomas y mi compromiso con la inclusión.</p>
+        <p class="main-about-text">Fuera del ámbito profesional, me encanta la música y las actividades al aire libre en grupo, siempre buscando nuevas experiencias y formas de conectar con las personas.</p>
+      </section>         
+        <section class="main-section">
         <article class="main-education">
           <h4 class="main-title uppercase">Formación</h4>
           <div class="linea"></div>
@@ -56,12 +56,17 @@
                 <i class="skills-list-item-icon fab fa-html5"></i>
               </li>
               <li class="skills-list-item">
-                <i class="skills-list-item-icon fab fa-css3-alt"></i></li>
+                <i class="skills-list-item-icon fab fa-css3-alt"></i>
+              </li>
               <li class="skills-list-item">
                 <i class="skills-list-item-icon fab fa-sass"></i>
               </li>
               <li class="skills-list-item">
-                <i class="skills-list-item-icon fab fa-js-square"></i></li>
+                <i class="skills-list-item-icon fab fa-js-square"></i>
+              </li>
+              <li class="skills-list-item">
+                <img src="../assets/icons/graphql.svg" class="skills-list-item-icon icon" />
+              </li>
               <li class="skills-list-item">
                 <i class="skills-list-item-icon fab fa-vuejs"></i>
               </li>

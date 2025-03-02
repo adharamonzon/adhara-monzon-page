@@ -13,7 +13,7 @@
         <ul>
           <li>
             <p class="experience-text">AKDB <small>01.2025 - Actualidad</small></p>
-            <p class="experience-text">Proyecto de RR.HH y personal en <strong>Alemán</strong> con <strong>VUE3</strong></p>
+            <p class="experience-text">Proyecto gestión de personal y nóminas<strong> Alemán</strong> con <strong>VUE3, TypeScript y GraphQl</strong>.</p>
           </li>
         </ul>
     </div> 
