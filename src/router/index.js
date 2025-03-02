@@ -19,7 +19,9 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(
+    process.env.NODE_ENV === "production" ? "/adhara-monzon-page/" : "/"
+  ),
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
